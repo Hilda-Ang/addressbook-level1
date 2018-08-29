@@ -592,7 +592,7 @@ public class AddressBook {
      */
     private static String executeSortByNameAllPersonsInAddressBook() {
         ArrayList<String[]> toBeDisplayed = getAllPersonsInAddressBook();
-        Arrays.sort(toBeDisplayed, (person1, person2) => person1[0] - person2[0]);
+        Collections.sort(toBeDisplayed, (person1, person2) -> person1[0].compareTo(person2[0]));
         showToUser(toBeDisplayed);
         return getMessageForPersonsDisplayedSummary(toBeDisplayed);
     }
